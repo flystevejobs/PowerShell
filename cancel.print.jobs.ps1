@@ -1,0 +1,1 @@
+﻿get-wmiobject win32_printer -filter "(Local = $true) and (Shared = $true)" | foreach {Write-Host “Cancelling all jobs on $($_.Name)” -ForegroundColor Green $_.CancelAllJobs()}
